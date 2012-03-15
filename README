@@ -94,7 +94,7 @@ To run the program, write the following line on a terminal:
 ./qc < examples/TARGET_FILE
 
 It must be pointed out that, despite it's nonchalant look, the language is Turing-complete.
-As proof, the file examples/fib contains a Fibonacci implementation:
+As a sample of its possibilities, the file examples/fib contains a Fibonacci implementation:
 
 # Returns the nth element of the fibonacci sequence.
 A happy level 1 FemaleRabbit enters the battlefield.
