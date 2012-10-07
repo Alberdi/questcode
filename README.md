@@ -10,19 +10,13 @@ This was a class project carried out by Jorge Diz Pico and Marcelino Alberdi Per
 
 The goal of this program is to implement an integer-handling language whose code simulates a classic fantasy or roleplaying combat. For instance:
 
-> A level 5 paladin enters the battlefield.
-
-> As long as the paladin is alive.
-
->  Follow tactic.
-
->  Scry on paladin.
-
->  1 goblin damages the paladin.
-
->  End tactic.
-
-> Scry on paladin.
+    A level 5 paladin enters the battlefield.
+    As long as the paladin is alive.
+      Follow tactic.
+      Scry on paladin.
+      1 goblin damages the paladin.
+      End tactic.
+    Scry on paladin.
 
 (file: `examples/loop`)
 
@@ -36,17 +30,15 @@ Once the code has all been read and the correct grammar tree has been generated,
 
 Take notice that this `compiler`s behavior is more akin to an interpreter, since it is in this execution stage where errors such as double declaring a variable, read a nonexistent one or division by zero are detected. For instance, this code:
 
-> Scry on orc.
+    Scry on orc.
 
 (file: `examples/nodecl`)
 
 generates the following error output:
 
-> $ ./qc < examples/nodecl
-
-> Error: I can't find orc (are you sure it's in the battlefield?).
-
-> Story finished.
+    $ ./qc < examples/nodecl
+    Error: I can't find orc (are you sure it's in the battlefield?).
+    Story finished.
 
 Warning that the variable (the orc) has not been declared previous to the attempted access (it is not `on the battlefield`).
 
@@ -100,46 +92,30 @@ For compiling, make use of the Makefile with the command `make` (note the possib
 
 To run the program, write the following line on a terminal:
 
-> ./qc < examples/TARGET_FILE
+    ./qc < examples/TARGET_FILE
 
 It must be pointed out that, despite it's nonchalant look, the language is Turing-complete.
 As a sample of its possibilities, the file examples/fib contains a poetic Fibonacci implementation:
 
-> \# Returns the nth element of the fibonacci sequence.
-
-> A happy level 1 FemaleRabbit enters the battlefield.
-
-> A hopeful MaleRabbit enters the battlefield.
-
-> Some LittleRabbits enter the battlefield.
-
-> The Sun enters the battlefield.
-
-> Command Sun.
-
->
-
-> As long as The Sun is alive.
-
->  Follow tactic.
-
->    0 goblins cheer the LittleRabbits.
-
->    MaleRabbit heals the LittleRabbits.
-
->    FemaleRabbit heals the LittleRabbits.
-
->    The FemaleRabbit confronts the MaleRabbit.
-
->    The LittleRabbits confront the FemaleRabbit.
-
->    1 goblin damages The Sun.
-
->  End tactic.
-
-> The MaleRabbit confronts the LittleRabbits. # We did two extra iterations
-> Scry LittleRabbits.
-> \# End.
+    # Returns the nth element of the fibonacci sequence.
+    A happy level 1 FemaleRabbit enters the battlefield.
+    A hopeful MaleRabbit enters the battlefield.
+    Some LittleRabbits enter the battlefield.
+    The Sun enters the battlefield.
+    Command Sun.
+    
+    As long as The Sun is alive.
+      Follow tactic.
+        0 goblins cheer the LittleRabbits.
+        MaleRabbit heals the LittleRabbits.
+        FemaleRabbit heals the LittleRabbits.
+        The FemaleRabbit confronts the MaleRabbit.
+        The LittleRabbits confront the FemaleRabbit.
+        1 goblin damages The Sun.
+      End tactic.
+    The MaleRabbit confronts the LittleRabbits. # We did two extra iterations
+    Scry LittleRabbits.
+    # End.
 
 This is a small summary of the provided examples you can find. Those marked with an * need a command-line provided parameter.
 
